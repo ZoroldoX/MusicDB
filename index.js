@@ -25,9 +25,9 @@ app.use(methodOverride('_method'));
 //Routes go here
 
 // Error Handler
-app.use(function(err, req, res, next) {
-  // render the error page
-  res.render('error', {error});
+app.use(function (err, req, res, next) {
+    // render the error page
+    res.render('error', { error });
 });
 
 app.listen(3000, () => {
