@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="HTML,CSS" />
-    <meta name="description" content="..." />
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script defer src="/js/nav-script.js"></script>
-    <link rel="stylesheet" href="/css/nav.css" />
 
-    <div class="topnav" id="myTopnav">
-      <a href="/artists">Artists</a>
-      <a href="/albums">Albums</a>
-      <a href="/concerts" class="active">Concerts</a>
-      <a href="/songs">Songs</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="HTML,CSS" />
+  <meta name="description" content="..." />
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/nav-script.js"></script>
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/searchbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-  <body>
-    <table border="1" table class="styled-table">
-      <thead>
-        <tr>
-          <td colspan="4">CONCERTS</td>
-        </tr>
-      </thead>
+  <div class="topnav" id="myTopnav">
+    <a href="" style="margin-right: 1.5rem"><b><strong>MusicDB</strong></b></a>
+    <a href="/artists">Artists</a>
+    <a href="/albums">Albums</a>
+    <a href="/concerts" class="active">Concerts</a>
+    <a href="/songs">Songs</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <form class="example">
+      <button type="submit" class="search-button"><i class="fa fa-search" style="color: #333"></i></button>
+      <input type="text" placeholder="Search.." name="search" class="search-bar" />
+    </form>
+  </div>
+</head>
+
+<body>
+  <table border="1" table class="styled-table">
+    <thead>
       <tr>
-        <td><b>Artist</b></td>
-        <td><b>Date</b></td>
-        <td><b>Location</b></td>
-        <td><b>Attendance</b></td>
+        <td colspan="4">CONCERTS</td>
       </tr>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
-      <form class="example" action="action_page.php">
-        <input type="text" placeholder="Search.." name="search" />
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-      <% for(concert of concerts ) { %>
+    </thead>
+    <tr>
+      <td><b>Artist</b></td>
+      <td><b>Date</b></td>
+      <td><b>Location</b></td>
+      <td><b>Attendance</b></td>
+    </tr>
+    <% for(concert of concerts ) { %>
       <tr>
-        <td><%= concert.artist.name %></td>
-        <td><%= concert.date.toString().slice(4,15) %></td>
-        <td><%= concert.location %></td>
-        <td><%= concert.attendance %></td>
+        <td>
+          <%= concert.artist.name %>
+        </td>
+        <td>
+          <%= concert.date.toString().slice(4,15) %>
+        </td>
+        <td>
+          <%= concert.location %>
+        </td>
+        <td>
+          <%= concert.attendance %>
+        </td>
       </tr>
       <% } %>
-    </table>
-  </body>
+  </table>
+  <div class="footer">
+    <p>Created By <a href="https://github.com/ZoroldoX/MusicDB" style="color: #a0a0a0; text-decoration: none"><i
+          class="fa fa-github" style="font-size:19px"></i>&nbsp;Harsha & Dhruv</a></p>
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,21 @@
+.search-bar, .search-button{
+
+    margin-top: 0.5rem;
+    padding: 0.5rem;    
+    float: right;
+}
+
+.search-button{
+    margin-right: 1rem; 
+    background-color: #04aa6d;
+    border:none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.search-bar{
+    border:none;
+    border-right: 1px solid #333;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
