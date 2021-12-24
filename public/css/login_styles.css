@@ -68,9 +68,11 @@ body {
   padding: 0px 0px 5px 5px;
 }
 
-#login-form-submit {
+.login-form-submit {
   width: 100%;
   padding: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: none;
   border-radius: 5px;
   color: white;

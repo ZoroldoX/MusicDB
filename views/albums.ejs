@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="HTML,CSS" />
+  <meta name="description" content="..." />
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/nav-script.js"></script>
+  <link rel="stylesheet" href="/css/nav.css" />
+
+  <div class="topnav" id="myTopnav">
+    <a href="/artists">Artists</a>
+    <a href="/albums" class="active">Albums</a>
+    <a href="/concerts">Concerts</a>
+    <a href="/songs">Songs</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</head>
+
+<body>
+  <table border="1" table class="styled-table">
+    <thead>
+      <tr>
+        <td colspan="4">ALBUMS</td>
+      </tr>
+    </thead>
+    <tr>
+      <td><b>Composer Name</b></td>
+      <td><b>Album name</b></td>
+    </tr>
+
+    <% for(album of albums){ %>
+        <tr>
+            <td><%= album.composer.name %></td>
+            <td><%= album.name %> </td>
+        </tr>
+    <% } %>
+  </table>
+</body>
+
+</html>

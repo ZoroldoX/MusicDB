@@ -2,6 +2,7 @@ const Song = require("../models/song")
 const Artist = require("../models/artist")
 const Concert = require("../models/concert")
 const Album = require("../models/album")
+const User = require("../models/user")
 
 const songs = require('./songs')
 const artists = require('./artists')
@@ -9,8 +10,6 @@ const albums = require('./albums')
 const concerts = require('./concerts')
 
 const mongoose = require("mongoose")
-const artist = require("../models/artist")
-const concert = require("../models/concert")
 mongoose.connect('mongodb://localhost:27017/musicdb', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to mongod')
@@ -21,16 +20,38 @@ mongoose.connect('mongodb://localhost:27017/musicdb', { useNewUrlParser: true, u
 
 
 async function insert() {
-    //await Artist.insertMany(artists)
-    //await Album.insertMany(albums)
-    //await Song.insertMany(songs)
-    //await Concert.insertMany(concerts) 
+    await Artist.insertMany(artists)
+    await Album.insertMany(albums)
+    await Song.insertMany(songs)
+    await Concert.insertMany(concerts)
+}
+
+async function createUser() {
+    try {
+
+        const users = [
+            {
+                email: 'dhruvprabhu@gmail.com',
+                password: 'iamdhruv'
+            },
+            {
+                email: 'harshaprabhu@gmail.com',
+                password: 'iamharsha'
+            }
+        ]
+
+        await User.insertMany(users)
+
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 
-insert().then(() => {
-    mongoose.connection.close();
-})
+// insert().then(() => {
+//     mongoose.connection.close();
+// })
 
-
-//song.composer.dob.toString().slice(4, 15)
+// createUser().then(() => {
+//     mongoose.connection.close()
+// })
