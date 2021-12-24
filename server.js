@@ -46,6 +46,7 @@ app.get('/login', (req, res) => {
 
 app.post('/login', async (req, res) => {
     try {
+
         if (req.session.user) {
             return res.redirect('/artists')
         }
@@ -68,15 +69,25 @@ app.post('/login', async (req, res) => {
 
 app.get('/artists', async (req, res) => {
     try {
+
         if (!req.session.user) {
             return res.redirect('/login');
         }
+        const { search } = req.query;
+        let artists
+        if (search) {
+            artists = await Artist.find({ name: { $regex: '.*' + search + '.*' } })
+            if (!artists.length) {
+                artists = await Artist.find({})
+            }
+        } else {
+            artists = await Artist.find({})
+        }
 
-        const artists = await Artist.find({})
         if (!artists.length) {
             throw new Error('No Artists Found')
         }
-        return res.render('artists', { artists })
+        return res.render('artists', { artists, search })
 
     } catch (e) {
         return res.send(e.message)
@@ -85,14 +96,24 @@ app.get('/artists', async (req, res) => {
 
 app.get('/albums', async (req, res) => {
     try {
+
         if (!req.session.user) {
             return res.redirect('/login');
         }
-        const albums = await Album.find({}).populate('composer')
+        const { search } = req.query;
+        let albums
+        if (search) {
+            albums = await Album.find({ name: { $regex: '.*' + search + '.*' } }).populate('composer')
+            if (!albums.length) {
+                albums = await Album.find({}).populate('composer')
+            }
+        } else {
+            albums = await Album.find({}).populate('composer')
+        }
         if (!albums.length) {
             throw new Error('No Artists Found')
         }
-        return res.render('albums', { albums })
+        return res.render('albums', { albums, search })
 
     } catch (e) {
         return res.send(e.message)
@@ -101,14 +122,24 @@ app.get('/albums', async (req, res) => {
 
 app.get('/concerts', async (req, res) => {
     try {
+
         if (!req.session.user) {
             return res.redirect('/login');
         }
-        const concerts = await Concert.find({}).populate('artist')
+        const { search } = req.query;
+        let concerts
+        if (search) {
+            concerts = await Concert.find({ location: { $regex: '.*' + search + '.*' } }).populate('artist')
+            if (!concerts.length) {
+                concerts = await Concert.find({}).populate('artist')
+            }
+        } else {
+            concerts = await Concert.find({}).populate('artist')
+        }
         if (!concerts.length) {
             throw new Error('No Artists Found')
         }
-        return res.render('concerts', { concerts })
+        return res.render('concerts', { concerts, search })
 
     } catch (e) {
         return res.send(e.message)
@@ -117,15 +148,25 @@ app.get('/concerts', async (req, res) => {
 
 app.get('/songs', async (req, res) => {
     try {
+
         if (!req.session.user) {
             return res.redirect('/login');
         }
+        const { search } = req.query;
+        let songs
+        if (search) {
+            songs = await Song.find({ name: { $regex: '.*' + search + '.*' } }).populate('album').populate('composer')
+            if (!songs.length) {
+                songs = await Song.find({}).populate('album').populate('composer')
+            }
+        } else {
+            songs = await Song.find({}).populate('album').populate('composer')
+        }
 
-        const songs = await Song.find({}).populate('album').populate('composer')
         if (!songs.length) {
             throw new Error('No Songs Found')
         }
-        return res.render('songs', { songs })
+        return res.render('songs', { songs, search })
 
     } catch (e) {
         return res.send(e.message)
