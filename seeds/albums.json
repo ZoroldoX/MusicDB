@@ -1,0 +1,127 @@
+[{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c38"
+  },
+  "name": "Beauty Behind The Madness",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c39"
+  },
+  "name": "Starboy",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c3a"
+  },
+  "name": "Ballards 1",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001d"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c3b"
+  },
+  "name": "Nectar",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001d"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c3c"
+  },
+  "name": "Purpose",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001e"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c3d"
+  },
+  "name": "Beleive",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001e"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c3e"
+  },
+  "name": "Multiply",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001f"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c3f"
+  },
+  "name": "Divide",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb001f"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c40"
+  },
+  "name": "Happier Than Ever",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb0020"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c41"
+  },
+  "name": "Dont Smile at me",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb0020"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c42"
+  },
+  "name": "Fighting Demons",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb0022"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c43"
+  },
+  "name": "Legends Never Die",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb0022"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c44"
+  },
+  "name": "Ved",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb0021"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba3dbe325ff71347322c45"
+  },
+  "name": "Baaraat",
+  "composer": {
+    "$oid": "61ba39b8acf3141284bb0021"
+  },
+  "__v": 0
+}]

@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML,CSS" />
+    <meta name="description" content="..." />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script defer src="/js/nav-script.js"></script>
+    <link rel="stylesheet" href="/css/nav.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="HTML,CSS" />
-  <meta name="description" content="..." />
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <script defer src="/js/nav-script.js"></script>
-  <link rel="stylesheet" href="/css/nav.css" />
+    <div class="topnav" id="myTopnav">
+      <a href="/artists">Artists</a>
+      <a href="/albums">Albums</a>
+      <a href="/concerts" class="active">Concerts</a>
+      <a href="/songs">Songs</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </head>
 
-  <div class="topnav" id="myTopnav">
-    <a href="/artists">Artists</a>
-    <a href="/albums">Albums</a>
-    <a href="/concerts" class="active">Concerts</a>
-    <a href="/songs">Songs</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</head>
-
-<body>
-  <table border="1" table class="styled-table">
-    <thead>
+  <body>
+    <table border="1" table class="styled-table">
+      <thead>
+        <tr>
+          <td colspan="4">CONCERTS</td>
+        </tr>
+      </thead>
       <tr>
-        <td colspan="4">CONCERTS</td>
+        <td><b>Artist</b></td>
+        <td><b>Date</b></td>
+        <td><b>Location</b></td>
+        <td><b>Attendance</b></td>
       </tr>
-    </thead>
-    <tr>
-      <td><b>Artist</b></td>
-      <td><b>Date</b></td>
-      <td><b>Location</b></td>
-      <td><b>Attendance</b></td>
-    </tr>
-
-    <% for(concert of concerts ) { %>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search.." name="search" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <% for(concert of concerts ) { %>
       <tr>
-        <td>
-          <%= concert.artist.name %>
-        </td>
-        <td>
-          <%= concert.date.toString().slice(4,15) %>
-        </td>
-        <td>
-          <%= concert.location %>
-        </td>
-        <td>
-          <%= concert.attendance %>
-        </td>
+        <td><%= concert.artist.name %></td>
+        <td><%= concert.date.toString().slice(4,15) %></td>
+        <td><%= concert.location %></td>
+        <td><%= concert.attendance %></td>
       </tr>
       <% } %>
-
-  </table>
-</body>
-
+    </table>
+  </body>
 </html>
