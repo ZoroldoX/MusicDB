@@ -31,11 +31,11 @@ async function createUser() {
 
         const users = [
             {
-                email: 'dhruvprabhu@gmail.com',
+                email: 'prabhudhruv@gmail.com',
                 password: 'iamdhruv'
             },
             {
-                email: 'harshaprabhu@gmail.com',
+                email: 'astroharsha@gmail.com',
                 password: 'iamharsha'
             }
         ]
@@ -52,6 +52,6 @@ async function createUser() {
 //     mongoose.connection.close();
 // })
 
-// createUser().then(() => {
-//     mongoose.connection.close()
-// })
+ createUser().then(() => {
+     mongoose.connection.close()
+ })
