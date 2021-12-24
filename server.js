@@ -47,7 +47,7 @@ app.get('/login', (req, res) => {
 app.post('/login', async (req, res) => {
     try {
         if (req.session.user) {
-            return res.redirect('/songs')
+            return res.redirect('/artists')
         }
         const { email, password } = req.body;
         const user = await User.findOne({ email })
@@ -59,7 +59,7 @@ app.post('/login', async (req, res) => {
         }
 
         req.session.user = user.email;
-        return res.redirect('/songs')
+        return res.redirect('/artists')
 
     } catch (e) {
         return res.send(e.message)
@@ -135,9 +135,13 @@ app.get('/songs', async (req, res) => {
 app.get('/', (req, res) => {
 
     if (req.session.user) {
-        return res.redirect('/songs')
+        return res.redirect('/artists')
     }
     return res.redirect('/login')
+})
+
+app.get('*', (req, res) => {
+    return res.redirect('/artists')
 })
 
 app.listen(3000, () => {
