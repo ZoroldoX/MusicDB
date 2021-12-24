@@ -52,6 +52,6 @@ async function createUser() {
 //     mongoose.connection.close();
 // })
 
- createUser().then(() => {
-     mongoose.connection.close()
- })
+//  createUser().then(() => {
+//      mongoose.connection.close()
+//  })
